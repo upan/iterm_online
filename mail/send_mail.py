@@ -16,7 +16,7 @@ cf.read("../conf/config.conf")
 #mailto_list = ["liyuanchuan@variflight.com"]  #目标邮箱
 #mail_host = "smtp.163.com"    
 #mail_user = "liyuanchuan8@163.com"  
-#mail_pass = "li6303797"  #163邮箱smtp生成的密码
+#mail_pass = "abc"  #163邮箱smtp生成的密码
 
 mail_host = "smtp.exmail.qq.com"    
 mail_user = "monitor@feeyo.com"  
