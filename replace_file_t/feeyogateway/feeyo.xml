@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- root element, all properties must be under this element -->
+<feeyo>
+    
+    <!-- WEB -->
+    <web>
+        <ip>127.0.0.1</ip>
+        <port>8099</port>
+    </web>
+    
+    <!-- FLT -->
+    <flt>
+    	<parallel>
+    		<enable>true</enable>
+    		<workerSize>20</workerSize>
+    	</parallel>    	
+    	<queue>
+    	    <backpressure>
+    			<enable>true</enable>
+    			<waitSize>3000</waitSize>
+    			<waitMills>300</waitMills>
+    		</backpressure>
+    	</queue>
+    </flt>
+    
+    <!-- USER -->
+  	<user> 
+	    <username>feeyo</username>  
+	    <password>e10adc3949ba59abbe56e057f20f883e</password>  
+  	</user> 
+    
+    <!-- DB -->
+    <database>
+        <instances>master_8066,master_8066_idx,master_8066_var</instances>
+        <master_8066>
+            <url>jdbc:mysql://10.77.25.27:8066/flight_db?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</url>
+            <username>tod_yuzm</username>
+            <password>22bb7f2a75096320281948c83f1875db</password>
+            <initCount>5</initCount>
+            <maxCount>60</maxCount>
+        </master_8066>
+		<master_8066_idx>
+            <url>jdbc:mysql://10.77.25.27:8066/flight_idx_db?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</url>
+            <username>zhuam</username>
+            <password>diramdir</password>
+            <initCount>3</initCount>
+            <maxCount>10</maxCount>
+        </master_8066_idx>
+		<master_8066_var>
+            <url>jdbc:mysql://10.77.25.27:8066/var_db?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</url>
+            <username>zhuam</username>
+            <password>diramdir</password>
+            <initCount>2</initCount>
+            <maxCount>10</maxCount>
+        </master_8066_var>
+    </database>
+    
+    <!-- REDIS -->  
+  <redis> 
+  	
+  	<instances>master_6379,master_6379_adsb</instances>
+  	<master_6379>
+  		<ip>10.29.48.33</ip>
+        <port>6379</port>
+        <password></password>       
+        <timeout>5000</timeout> 
+        <maxIdle>30</maxIdle>
+        <minIdle>5</minIdle>
+        <testOnBorrow>false</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+        <testWhileIdle>true</testWhileIdle>
+        <numTestsPerEvictionRun>-1</numTestsPerEvictionRun>
+        <minEvictableIdleTimeMillis>60000</minEvictableIdleTimeMillis>
+        <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+  	</master_6379>
+  	
+  	<master_6379_adsb>
+  		<ip>10.29.113.31</ip>  
+	    <port>6379</port>
+	    <password></password>
+	    <timeout>5000</timeout>  
+	    <maxIdle>10</maxIdle>  
+	    <minIdle>5</minIdle>  
+	    <testOnBorrow>false</testOnBorrow>  
+	    <testOnReturn>false</testOnReturn>  
+	    <testWhileIdle>true</testWhileIdle>  
+	    <numTestsPerEvictionRun>-1</numTestsPerEvictionRun>  
+	    <minEvictableIdleTimeMillis>60000</minEvictableIdleTimeMillis>  
+	    <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+  	</master_6379_adsb>
+  
+  </redis>
+    
+</feeyo>
